@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="module" version="1.0" client="site" method="upgrade">
+    <name>Video con título</name>
+    <author>Luis BC</author>
+    <version>1.0.0</version>
+    <description>Un módulo para mostrar un video con un titulo y botón de mute</description>
+    <files>
+        <filename>mod_videotitulo.xml</filename>
+        <filename module="mod_videotitulo">mod_videotitulo.php</filename>
+        <filename>index.html</filename>
+        <filename>helper.php</filename>
+        <filename>css/main.css</filename>
+        <filename>js/main.js</filename>
+        <filename>js/vendors.js</filename>
+        <filename>tmpl/default.php</filename>
+        <filename>tmpl/index.html</filename>
+    </files>
+    <config>
+        <fields name="params">
+            <fieldset name="basic">
+                <field 
+                    name="ruta-video" 
+                    type="filelist" 
+                    directory="images" 
+                    label="Video" 
+                    description="Ruta al video para mostrar"
+                ></field>
+                <field 
+                    name="ruta-video-hd" 
+                    type="filelist" 
+                    directory="images" 
+                    label="Video HD" 
+                    description="Ruta al video en alta calidad para mostrar"
+                ></field>
+                <field 
+                    name="titulo-linea-1" 
+                    type="text" 
+                    label="TITULO_LINEA_1" 
+                    description="Linea superior del título"
+                ></field>
+                <field 
+                    name="titulo-linea-2" 
+                    type="text" 
+                    label="TITULO_LINEA_2" 
+                    description="Linea inferior del título"
+                ></field>
+            </fieldset>
+        </fields>
+    </config>
+</extension>

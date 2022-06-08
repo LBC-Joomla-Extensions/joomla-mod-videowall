@@ -1,22 +1,24 @@
 {
-  "name": "joomla-base-module",
+  "name": "joomla-mod-videowall",
   "version": "1.0.0",
-  "description": "Una módulo base para Joomla.",
+  "description": "Módulo Joomla Videowall con título",
   "main": "index.js",
   "scripts": {
-    "build": "webpack --config webpack.config.js"
+    "build": "webpack --config webpack.config.js",
+    "watch": "webpack --config webpack.config.js --watch",
+    "update-styles": "git subtree pull --prefix src/styles https://github.com/LBC-Starter-Kits/sass-7-1-pattern.git main --squash"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/LBC-Starter-Kits/Joomla-Module-Starter-Kit.git.git"
+    "url": "git+https://github.com/LBC-Joomla-Extensions/joomla-mod-videowall.git"
   },
   "keywords": [],
   "author": "Luis Breña Calvo",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/LBC-Starter-Kits/Joomla-Module-Starter-Kit.git/issues"
+    "url": "https://github.com/LBC-Joomla-Extensions/joomla-mod-videowall.git/issues"
   },
-  "homepage": "https://github.com/LBC-Starter-Kits/Joomla-Module-Starter-Kit.git#readme",
+  "homepage": "https://github.com/LBC-Joomla-Extensions/joomla-mod-videowall.git#readme",
   "devDependencies": {
     "@babel/core": "^7.10.2",
     "@babel/polyfill": "^7.10.1",

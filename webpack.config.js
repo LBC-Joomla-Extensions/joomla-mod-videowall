@@ -47,13 +47,13 @@ module.exports = {
                 { from: path.resolve(__dirname,"vendor"), to: "vendor" },
                 { from: "./src/index.html", to: "index.html" },
                 { from: "./src/helper.php", to: "helper.php" },
-                { from: "./src/mod_modBase.php", to: "mod_modBase.php" },
-                { from: "./src/mod_modBase.xml", to: "mod_modBase.xml" },                
+                { from: "./src/mod_videotitulo.php", to: "mod_videotitulo.php" },
+                { from: "./src/mod_videotitulo.xml", to: "mod_videotitulo.xml" },                
             ],
         }),
         new ZipPlugin({
             path : '../dist_zip',
-            filename : 'j3mod_base.zip'
+            filename : 'modVideowall.zip'
         }),
     ],
 };

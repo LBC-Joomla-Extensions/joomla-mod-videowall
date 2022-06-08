@@ -1,5 +1,5 @@
 import '../styles/main.scss';
-import {abreMenu, cierraMenu} from './functions.js';
+import {subeVol, muteVol} from './functions.js';
 
-window.abreMenu = abreMenu;
-window.cierraMenu = cierraMenu;
+window.subeVol = subeVol;
+window.muteVol = muteVol;
