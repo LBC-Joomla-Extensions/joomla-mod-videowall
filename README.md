@@ -1,6 +1,6 @@
-# Estructura base de una módulo para Joomla 3.x
+# Módulo Joomla Videowall con título
 
-Una plantilla de base con la estructura de un módulo Joomla.
+Un módulo para mostrar un video con un titulo y botón de mute
 
 ## Prerrequisitos
 * NodeJs
@@ -10,7 +10,7 @@ Una plantilla de base con la estructura de un módulo Joomla.
 ~~~
 git init foo
 cd foo
-git pull https://github.com/LBC-Starter-Kits/Joomla-Module-Starter-Kit.git
+git pull https://github.com/LBC-Joomla-Extensions/joomla-mod-videowall.git
 ~~~
 
 * Instalamos las dependencias del archivo package.json
