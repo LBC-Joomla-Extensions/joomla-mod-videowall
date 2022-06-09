@@ -3,14 +3,17 @@
 // 1. Configuration and helpers
 @import 'abstracts';
 
-#video-outer-wrapper, #video-inner-wrapper{
-    width: 100%;
+#video-outer-wrapper, #video-inner-wrapper{    
     position:relative;
+    width: 100%;
+    height: inherit;
 }
 
 video{
     width: 100%;
+    height: inherit;
     z-index:1;
+    object-fit: cover;
 }
 
 #video-inner-wrapper::after{
