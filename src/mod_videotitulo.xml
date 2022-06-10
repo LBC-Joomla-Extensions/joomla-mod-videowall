@@ -9,11 +9,10 @@
         <filename module="mod_videotitulo">mod_videotitulo.php</filename>
         <filename>index.html</filename>
         <filename>helper.php</filename>
-        <filename>css/main.css</filename>
-        <filename>js/main.js</filename>
-        <filename>js/vendors.js</filename>
-        <filename>tmpl/default.php</filename>
-        <filename>tmpl/index.html</filename>
+        <folder>css</folder>
+        <folder>js</folder>
+        <folder>vendor</folder>
+        <folder>tmpl</folder>
     </files>
     <config>
         <fields name="params">
