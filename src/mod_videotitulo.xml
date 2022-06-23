@@ -17,19 +17,40 @@
     <config>
         <fields name="params">
             <fieldset name="basic">
+                <field
+                    name="es-url"
+                    type="radio"
+                    class="btn-group btn-group-yesno"
+                    default="0"
+                    label="URL"
+                    description="Si para url externa (youtube, etc...) y no para archivo local"
+                >
+                    <option value="0">JNO</option>
+					<option value="1">JYES</option>
+                </field>
+                <field 
+                    name="url-video" 
+                    type="URL" 
+                    directory="images" 
+                    label="URL" 
+                    description="URL al video para mostrar embed"
+                    showon="es-url:1"
+                ></field>                
                 <field 
                     name="ruta-video" 
                     type="filelist" 
                     directory="images" 
                     label="Video" 
-                    description="Ruta al video para mostrar"
+                    description="Ruta al video para mostrar (dentro de /images)"
+                    showon="es-url:0"
                 ></field>
                 <field 
                     name="ruta-video-hd" 
                     type="filelist" 
                     directory="images" 
                     label="Video HD" 
-                    description="Ruta al video en alta calidad para mostrar"
+                    description="Ruta al video en alta calidad para mostrar (dentro de /images)"
+                    showon="es-url:0"
                 ></field>
                 <field 
                     name="titulo-linea-1" 

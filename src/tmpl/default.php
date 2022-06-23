@@ -9,20 +9,25 @@ $doc->addScript(JURI::base() . "modules/mod_videotitulo/js/main.js","text/javasc
 
 
 ?>
-<div id="video-outer-wrapper">
+<div id="video-outer-wrapper" class="<?php if( $params['es-url']){ echo "embed"; } ?>">
     <div id="video-inner-wrapper">
-        <video autoplay muted loop id="video-fondo">
-            <source id="video" src="images/<?php echo $params['ruta-video']; ?>" type="video/mp4">            
-        </video>
-        <video autoplay muted loop id="video-fondo-hd">            
-            <source id="video-hd" src="images/<?php echo $params['ruta-video-hd']; ?>" type="video/mp4">
-        </video>
+        <?php if( !$params['es-url']){ ?>
+            <video autoplay muted loop id="video-fondo" class="video-resource">
+                <source id="video" src="images/<?php echo $params['ruta-video']; ?>" type="video/mp4">            
+            </video>
+            <video autoplay muted loop id="video-fondo-hd" class="video-resource">            
+                <source id="video-hd" src="images/<?php echo $params['ruta-video-hd']; ?>" type="video/mp4">
+            </video>
+        <?php }else{ ?>
+            <iframe width="560" height="315" src="<?php echo $params['url-video'] . '?autoplay=1&mute=1'; ?>" class="video-resource" title="Transition Festival 2022 Aftermovie" frameborder="0"  allowfullscreen></iframe>
+        <?php }?>
     </div>
 
     <div id="boton-vol">
         <i id="boton-volup" class="fas fa-volume-up" onclick="subeVol()"></i>
         <i id="boton-volmute" class="fas fa-volume-mute" onclick="muteVol()"></i>
     </div>
+
 
     <div id="welcome-wrapper">
         <h1><span> <?php echo $params['titulo-linea-1']; ?> </span><span><?php echo $params['titulo-linea-2']; ?></span></h1>
