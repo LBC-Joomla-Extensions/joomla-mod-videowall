@@ -7,19 +7,33 @@ $doc=JFactory::getDocument();
 $doc->addStyleSheet(JURI::base() . "modules/mod_videotitulo/css/main.css");
 $doc->addScript(JURI::base() . "modules/mod_videotitulo/js/main.js","text/javascript");
 
+if(!$params['es-url']){
+    $ruta1 = $params['ruta-video'];
+    $ruta2 = $params['ruta-video-hd'];
+}
+else{
+    $ruta1 = $params['url-video'] . "?version=3";
 
+    if($params['url-video-autoplay']){
+        $ruta1 .= "&mute=1&autoplay=1";
+    }
+
+    if($params['url-video-loop'] && !empty($params['url-video-id'])){
+        $ruta1 .= "&loop=1&playlist=" . $params['url-video-id'];
+    }
+}
 ?>
 <div id="video-outer-wrapper" class="<?php if( $params['es-url']){ echo "embed"; } ?>">
     <div id="video-inner-wrapper">
         <?php if( !$params['es-url']){ ?>
             <video autoplay muted loop id="video-fondo" class="video-resource">
-                <source id="video" src="images/<?php echo $params['ruta-video']; ?>" type="video/mp4">            
+                <source id="video" src="images/<?php echo $ruta1; ?>" type="video/mp4">            
             </video>
             <video autoplay muted loop id="video-fondo-hd" class="video-resource">            
-                <source id="video-hd" src="images/<?php echo $params['ruta-video-hd']; ?>" type="video/mp4">
+                <source id="video-hd" src="images/<?php echo $ruta2; ?>" type="video/mp4">
             </video>
         <?php }else{ ?>
-            <iframe width="560" height="315" src="<?php echo $params['url-video'] . '?autoplay=1&mute=1'; ?>" class="video-resource" title="Transition Festival 2022 Aftermovie" frameborder="0"  allowfullscreen></iframe>
+            <iframe width="560" height="315" src="<?php echo $ruta1; ?>" class="video-resource" title="Transition Festival 2022 Aftermovie" frameborder="0"  allowfullscreen></iframe>
         <?php }?>
     </div>
 
