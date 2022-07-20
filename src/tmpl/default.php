@@ -23,8 +23,8 @@ else{
     }
 }
 ?>
-<div id="video-outer-wrapper" class="<?php if( $params['es-url']){ echo "embed"; } ?>">
-    <div id="video-inner-wrapper">
+<div class="video-outer-wrapper <?php if( $params['es-url']){ echo "embed"; } ?>">
+    <div class="video-inner-wrapper">
         <?php if( !$params['es-url']){ ?>
             <video autoplay muted loop id="video-fondo" class="video-resource">
                 <source id="video" src="images/<?php echo $ruta1; ?>" type="video/mp4">            
@@ -37,13 +37,13 @@ else{
         <?php }?>
     </div>
 
-    <div id="boton-vol">
+    <div class="boton-vol">
         <i id="boton-volup" class="fas fa-volume-up" onclick="subeVol()"></i>
         <i id="boton-volmute" class="fas fa-volume-mute" onclick="muteVol()"></i>
     </div>
 
 
-    <div id="welcome-wrapper">
+    <div class="welcome-wrapper">
         <h1><span> <?php echo $params['titulo-linea-1']; ?> </span><span><?php echo $params['titulo-linea-2']; ?></span></h1>
     </div>
 </div>

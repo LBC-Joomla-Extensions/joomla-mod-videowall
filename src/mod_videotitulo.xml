@@ -60,7 +60,7 @@
                     name="url-video-id"
                     type="text"
                     label="Video ID"
-                    showon="url-video-loop:1"
+                    showon="es-url:1"
                 >
                 </field>  
                 <field 

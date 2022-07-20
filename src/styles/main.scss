@@ -3,20 +3,22 @@
 // 1. Configuration and helpers
 @import 'abstracts';
 
-#video-outer-wrapper, #video-inner-wrapper{    
+.video-outer-wrapper, .video-inner-wrapper{    
     position:relative;
     width: 100%;
     height: inherit;
+    max-height: inherit;
 }
 
 video{
     width: 100%;
     height: inherit;
+    max-height: inherit;
     z-index:1;
     object-fit: cover;
 }
 
-#video-inner-wrapper::after{
+.video-inner-wrapper::after{
     content: "";
     position: absolute;
     bottom: 0;
@@ -31,7 +33,7 @@ video{
     }
 }
 
-#boton-vol{
+.boton-vol{
     position: absolute;
     bottom:0;
     right: 0;
@@ -51,24 +53,26 @@ video{
     display: none;
 }
 
-#welcome-wrapper{
+.welcome-wrapper{
     position: absolute;
     bottom: 0;
     left:0;
     z-index:2;
 
     color:white;    
+
+    h1{
+        font-size: 1.5rem;
+        text-transform: uppercase;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        margin:0;
+        padding:0 0 0 1rem;
+    }
 }
 
-#welcome-wrapper h1{
-    font-size: 1.5rem;
-    text-transform: uppercase;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    margin:0;
-    padding:0 0 0 1rem;
-}
+
 
 
 
