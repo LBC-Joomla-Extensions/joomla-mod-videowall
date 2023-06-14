@@ -63,20 +63,26 @@
                     showon="es-url:1"
                 >
                 </field>  
+                
+                <!-- 
+                Estos campos media son incompatibles con el File Browser de JCE. 
+                Si JCE está instalado ir al componente JCE -> Perfil Usuario -> Features & Layout -> Additional Features -> Uncheck File Browser 
+                -->
                 <field 
                     name="ruta-video" 
-                    type="filelist" 
-                    directory="images" 
+                    type="media"                     
                     label="Video" 
-                    description="Ruta al video para mostrar (dentro de /images)"
+                    types="videos"
+                    description="Ruta al video para mostrar"
                     showon="es-url:0"
                 ></field>
+
                 <field 
                     name="ruta-video-hd" 
-                    type="filelist" 
-                    directory="images" 
+                    type="media"                     
                     label="Video HD" 
-                    description="Ruta al video en alta calidad para mostrar (dentro de /images)"
+                    types="videos"
+                    description="Ruta al video en alta calidad para mostrar"
                     showon="es-url:0"
                 ></field>
                 <field 
@@ -91,6 +97,37 @@
                     label="TITULO_LINEA_2" 
                     description="Linea inferior del título"
                 ></field>
+                <field
+                    name="tiene-poster"
+                    type="radio"
+                    class="btn-group btn-group-yesno"
+                    default="0"
+                    label="Poster"
+                    description="Activar el poster durante la precarga del video"
+                >
+                    <option value="0">JNO</option>
+					<option value="1">JYES</option>
+                </field>
+                <field 
+                    name="ruta-poster" 
+                    type="media"                     
+                    label="Imagen" 
+                    description="Ruta a la imagen del poster"
+                    showon="tiene-poster:1"
+                ></field>
+                <fieldset label="basic">
+                <field
+                    name="lazy-video"
+                    type="radio"
+                    class="btn-group btn-group-yesno"
+                    default="1"
+                    label="Defer Loading"
+                    description="Posponer la carga del video hasta que la página este cargada"
+                >
+                    <option value="0">JNO</option>
+					<option value="1">JYES</option>
+                </field>
+                </fieldset>
             </fieldset>
         </fields>
     </config>
