@@ -9,7 +9,6 @@ $doc->addScript(JURI::base() . "modules/mod_videotitulo/js/main.js","text/javasc
 
 if(!$params['es-url']){
     $ruta1 = $params['ruta-video'];
-    $ruta2 = $params['ruta-video-hd'];
 }
 else{
     $ruta1 = $params['url-video'] . "?version=3";
@@ -26,12 +25,14 @@ else{
 <div class="video-outer-wrapper <?php if( $params['es-url']){ echo "embed"; } ?>">
     <div class="video-inner-wrapper">
         <?php if( !$params['es-url']){ ?>
-            <video autoplay muted loop id="video-fondo" class="video-resource">
-                <source id="video" src="images/<?php echo $ruta1; ?>" type="video/mp4">            
-            </video>
-            <video autoplay muted loop id="video-fondo-hd" class="video-resource">            
-                <source id="video-hd" src="images/<?php echo $ruta2; ?>" type="video/mp4">
-            </video>
+            <video 
+                autoplay muted loop 
+                id="video-fondo" 
+                class="video-resource"
+                <?php if($params['poster']!=""){ echo "poster='/".$params['poster']."'";} ?> 
+                >
+                <source id="video" src="<?php echo $ruta1; ?>" type="video/mp4">            
+            </video>           
         <?php }else{ ?>
             <iframe width="560" height="315" src="<?php echo $ruta1; ?>" class="video-resource" title="Transition Festival 2022 Aftermovie" frameborder="0"  allowfullscreen></iframe>
         <?php }?>
@@ -43,19 +44,7 @@ else{
     </div>
 
 
-    <div class="welcome-wrapper">
-        <h1><span> <?php echo $params['titulo-linea-1']; ?> </span><span><?php echo $params['titulo-linea-2']; ?></span></h1>
+    <div class="video-overlay">
+        <?php echo $params['inner-html']; ?>
     </div>
 </div>
-
-<script>
-    var v;
-    if(document.documentElement.clientWidth>1024){
-        v=document.getElementById("video-fondo");        
-    }
-    else{
-        v=document.getElementById("video-fondo-hd");
-    }
-
-    v.parentNode.removeChild(v);
-</script>

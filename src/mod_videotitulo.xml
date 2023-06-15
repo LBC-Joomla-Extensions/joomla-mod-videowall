@@ -61,11 +61,10 @@
                     type="text"
                     label="Video ID"
                     showon="es-url:1"
-                >
-                </field>  
+                />
                 
                 <!-- 
-                Estos campos media son incompatibles con el File Browser de JCE. 
+                El media es incompatibles con el File Browser de JCE. 
                 Si JCE está instalado ir al componente JCE -> Perfil Usuario -> Features & Layout -> Additional Features -> Uncheck File Browser 
                 -->
                 <field 
@@ -75,29 +74,17 @@
                     types="videos"
                     description="Ruta al video para mostrar"
                     showon="es-url:0"
-                ></field>
+                />
 
                 <field 
-                    name="ruta-video-hd" 
-                    type="media"                     
-                    label="Video HD" 
-                    types="videos"
-                    description="Ruta al video en alta calidad para mostrar"
-                    showon="es-url:0"
-                ></field>
-                <field 
-                    name="titulo-linea-1" 
-                    type="text" 
-                    label="TITULO_LINEA_1" 
-                    description="Linea superior del título"
-                ></field>
-                <field 
-                    name="titulo-linea-2" 
-                    type="text" 
-                    label="TITULO_LINEA_2" 
-                    description="Linea inferior del título"
-                ></field>
-                <field
+                    name="inner-html" 
+                    type="editor" 
+                    label="HTML Interior" 
+                    description="Html para mostrar sobre el video" 
+                    filter="safehtml" 
+                />
+
+                <!-- <field
                     name="tiene-poster"
                     type="radio"
                     class="btn-group btn-group-yesno"
@@ -107,15 +94,14 @@
                 >
                     <option value="0">JNO</option>
 					<option value="1">JYES</option>
-                </field>
+                </field> -->
                 <field 
-                    name="ruta-poster" 
+                    name="poster" 
                     type="media"                     
-                    label="Imagen" 
-                    description="Ruta a la imagen del poster"
-                    showon="tiene-poster:1"
-                ></field>
-                <fieldset label="basic">
+                    label="Poster" 
+                    description="Ruta a la imagen del poster que se muestra mientras se carga el video"
+                />
+                
                 <field
                     name="lazy-video"
                     type="radio"
@@ -127,7 +113,7 @@
                     <option value="0">JNO</option>
 					<option value="1">JYES</option>
                 </field>
-                </fieldset>
+                
             </fieldset>
         </fields>
     </config>
