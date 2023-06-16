@@ -45,10 +45,8 @@ function lazyLoadVideos(querySelector = ".video-outer-wrapper video") {
                     
                 }
             }
-            console.info("Video loading")
             video.target.load();
             video.target.dispatchEvent(videoLoadingEvent);
-            // video.target.classList.remove("lazy");
             lazyVideoObserver.unobserve(video.target);
         }
         });
