@@ -8,7 +8,7 @@ $doc->addStyleSheet(JURI::base() . "modules/mod_videotitulo/css/main.css");
 $doc->addScript(JURI::base() . "modules/mod_videotitulo/js/main.js","text/javascript");
 
 if(!$params['es-url']){
-    $ruta1 = $params['ruta-video'];
+    $ruta1 = "/" . $params['ruta-video'];
 }
 else{
     $ruta1 = $params['url-video'] . "?version=3";
@@ -26,12 +26,22 @@ else{
     <div class="video-inner-wrapper">
         <?php if( !$params['es-url']){ ?>
             <video 
-                autoplay muted loop 
+                autoplay muted loop playsinline
                 id="video-fondo" 
                 class="video-resource"
                 <?php if($params['poster']!=""){ echo "poster='/".$params['poster']."'";} ?> 
                 >
-                <source id="video" src="<?php echo $ruta1; ?>" type="video/mp4">            
+                <?php if($params['lazy-video']){ ?>
+                    <source data-src="<?php echo $ruta1; ?>" type="video/mp4">
+                <?php
+                }
+                else{
+                ?>
+                    <source id="video" src="<?php echo $ruta1; ?>" type="video/mp4">
+                <?php
+                }
+                ?>
+                            
             </video>           
         <?php }else{ ?>
             <iframe width="560" height="315" src="<?php echo $ruta1; ?>" class="video-resource" title="Transition Festival 2022 Aftermovie" frameborder="0"  allowfullscreen></iframe>
@@ -48,3 +58,9 @@ else{
         <?php echo $params['inner-html']; ?>
     </div>
 </div>
+
+<?php if($params['lazy-video']){ ?>
+<script>
+    document.addEventListener("DOMContentLoaded", lazyLoadVideos(".video-outer-wrapper video"));
+</script>
+<?php } ?>

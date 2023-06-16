@@ -84,17 +84,6 @@
                     filter="safehtml" 
                 />
 
-                <!-- <field
-                    name="tiene-poster"
-                    type="radio"
-                    class="btn-group btn-group-yesno"
-                    default="0"
-                    label="Poster"
-                    description="Activar el poster durante la precarga del video"
-                >
-                    <option value="0">JNO</option>
-					<option value="1">JYES</option>
-                </field> -->
                 <field 
                     name="poster" 
                     type="media"                     
