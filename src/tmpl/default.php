@@ -2,13 +2,17 @@
 
 defined("_JEXEC") or die;
 
+use Joomla\CMS\Uri\Uri;
+
+// $urlBase = Uri::root();
+$urlBase = JURI::base();
 $doc=JFactory::getDocument();
 
-$doc->addStyleSheet(JURI::base() . "modules/mod_videotitulo/css/main.css");
-$doc->addScript(JURI::base() . "modules/mod_videotitulo/js/main.js","text/javascript");
+$doc->addStyleSheet($urlBase . "modules/mod_videotitulo/css/main.css");
+$doc->addScript($urlBase . "modules/mod_videotitulo/js/main.js","text/javascript");
 
 if(!$params['es-url']){
-    $ruta1 = "/" . $params['ruta-video'];
+    $ruta1 = $urlBase . $params['ruta-video'];
 }
 else{
     $ruta1 = $params['url-video'] . "?version=3";
